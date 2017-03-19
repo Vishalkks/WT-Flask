@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title><Bob/></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  
+
+</head>
+
+<body background="{{ url_for('static', filename='music-player-wallpaper.jpg') }}">
+<div class="Wrapper" ng-app="myApp">
+    <div class="Sidebar" ng-class="boolie ? 'is-collapsed' : ''">
+        <header class="Sidebar-header">
+            <div class="Sidebar-logo"></div>
+        </header>
+        <nav role="navigation">
+            <ul>
+                <li class="Sidebar-navItem">
+                    <i class="Sidebar-menuIcon fa fa-bar-chart"></i>
+                    <a href="">Performance</a>
+                </li>
+                <li class="Sidebar-navItem">
+                    <i class="Sidebar-menuIcon fa fa-shopping-cart"></i>
+                    <a href="#">Activities</a>
+                </li>
+                <li class="Sidebar-navItem">
+                    <i class="Sidebar-menuIcon fa fa-cog"></i>
+                    <a href="#">Settings</a>
+                </li>
+                <li class="Sidebar-navItem">
+                    <i class="Sidebar-menuIcon fa fa-question-circle"></i>
+                    <a href="#">Help & Support</a>
+                </li>                
+                <li class="Sidebar-navItem">
+                    <i class="Sidebar-menuIcon fa fa-sign-out"></i>
+                    <a href="#">Log out</a>
+                </li>
+            </ul>
+        </nav>
+        <footer class="Sidebar-footer" ng-click="boolie = !boolie">
+            <i class="Sidebar-toggleArrow Sidebar-menuIcon fa fa-arrow-left" ng-class="boolie ? 'rotate' : ''"></i>
+            <span class="Sidebar-toggleText">Minimize menu</span>
+        </footer>
+    </div>
+    <div class="Main">
+      <div class="container">
+        <div id="plwrap">
+         <ul id="plList"></ul>
+        </div>
+      </div>
+      <div class="column add-bottom">
+        <div id="mainwrap">
+          <div id="audiowrap">
+            <center><div id="audio0">
+              <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
+            </div></center>
+            <div id="tracks">
+              <a id="btnPrev">&laquo;</a>
+              <a id="btnNext">&raquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  
+  
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+  <script src='http://api.html5media.info/1.1.8/html5media.min.js'></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+  <script src="{{ url_for('static', filename='js/index1.js') }}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+</body>
+</html>

@@ -46,14 +46,14 @@ def logUser():
 	email = request.form['email']
 	password = request.form['password']
 	hash_password = generate_password_hash(password)
-	print(email,hash_password)
 	if email and password:
 		res = cursor.execute("SELECT password FROM User WHERE email= '"+email+"';")
 		data = cursor.fetchone()
-		if check_password_hash(password,data):
-			return redirect(url_for('login'),code=303)	
-		else:
+		print(data,password)
+		if check_password_hash(data[0],password):
 			return redirect(url_for('main'),code=303)	
+		else:
+			return redirect(url_for('login'),code=303)	
 
     
 if __name__ == "__main__":
